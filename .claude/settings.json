@@ -7,9 +7,16 @@
         "path": "skills/frontend-design/.claude-plugin/marketplace.json",
         "sparsePaths": ["skills/frontend-design"]
       }
+    },
+    "ui-ux-pro-max": {
+      "source": {
+        "source": "npm",
+        "package": "ui-ux-pro-max-skill"
+      }
     }
   },
   "enabledPlugins": {
-    "frontend-design@anthropic-skills": true
+    "frontend-design@anthropic-skills": true,
+    "ui-ux-pro-max-skill@ui-ux-pro-max": true
   }
 }
