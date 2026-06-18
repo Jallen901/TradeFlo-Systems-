@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradeFlo — Design Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #1a1a1a; font-family: 'Barlow', sans-serif; padding: 40px 20px; }
+.page-title { font-family: 'IBM Plex Mono', monospace; color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; text-align: center; margin-bottom: 12px; }
+.page-heading { font-family: 'Barlow Condensed', sans-serif; color: #fff; font-size: 36px; text-align: center; text-transform: uppercase; margin-bottom: 8px; }
+.page-sub { font-family: 'IBM Plex Mono', monospace; color: #555; font-size: 11px; text-align: center; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 48px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; max-width: 1400px; margin: 0 auto; }
+.card { overflow: hidden; border: 1px solid #333; }
+.card-label { background: #111; padding: 10px 16px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid #333; }
+.preview { padding: 40px 36px; min-height: 320px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+
+/* TEXTURES */
+.tex-blueprint { background-color: #0A1628; background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+.tex-blueprint-bold { background-color: #0A1628; background-image: linear-gradient(rgba(100,160,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(100,160,255,0.08) 1px, transparent 1px), linear-gradient(rgba(100,160,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(100,160,255,0.04) 1px, transparent 1px); background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px; }
+.tex-newsprint { background-color: #F0EDE8; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"); }
+.tex-newsprint-dark { background-color: #E8E4DC; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.12'/%3E%3C/svg%3E"); }
+.tex-steel { background-color: #141414; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 8px); }
+.tex-steel-rust { background-color: #111010; background-image: repeating-linear-gradient(135deg, rgba(196,92,26,0.04) 0px, rgba(196,92,26,0.04) 1px, transparent 1px, transparent 10px); }
+.tex-concrete { background-color: #2A2825; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E"); }
+.tex-charcoal { background-color: #1C1B19; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.2'/%3E%3C/svg%3E"); }
+.tex-carbon { background-color: #0D0D0D; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 4px), repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 4px); }
+.tex-worn-white { background-color: #F5F2EC; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 1px, transparent 1px, transparent 24px); }
+
+/* ACCENT COLORS */
+.accent-blue { color: #0047FF; }
+.accent-yellow { color: #F5C518; }
+.accent-rust { color: #C45C1A; }
+.accent-white { color: #ffffff; }
+.accent-green { color: #1A8C4E; }
+
+/* BTN */
+.btn { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; padding: 12px 24px; cursor: pointer; text-decoration: none; margin-right: 10px; margin-top: 20px; }
+.btn-solid-blue { background: #0047FF; color: #fff; }
+.btn-solid-yellow { background: #F5C518; color: #111; }
+.btn-solid-rust { background: #C45C1A; color: #fff; }
+.btn-solid-white { background: #fff; color: #111; }
+.btn-solid-ink { background: #111110; color: #fff; }
+.btn-outline-white { background: transparent; border: 2px solid rgba(255,255,255,0.4); color: #fff; }
+.btn-outline-ink { background: transparent; border: 2px solid #111110; color: #111110; }
+
+/* RULE */
+.rule-light { border-top: 2px solid rgba(255,255,255,0.12); margin-bottom: 20px; padding-top: 20px; }
+.rule-dark { border-top: 2px solid rgba(0,0,0,0.15); margin-bottom: 20px; padding-top: 20px; }
+.rule-accent-blue { border-top: 2px solid #0047FF; margin-bottom: 20px; padding-top: 20px; }
+.rule-accent-yellow { border-top: 2px solid #F5C518; margin-bottom: 20px; padding-top: 20px; }
+.rule-accent-rust { border-top: 2px solid #C45C1A; margin-bottom: 20px; padding-top: 20px; }
+
+h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; line-height: 1; font-size: 42px; margin-bottom: 12px; }
+p.sub { font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.5; }
+p.eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<p class="page-title">TradeFlo Systems</p>
+<h2 class="page-heading">Design Combinations</h2>
+<p class="page-sub">9 options — same content, different feel</p>
+
+<div class="grid">
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="card-label">A1 — Blueprint + Blue</div>
+    <div class="preview tex-blueprint">
+      <p class="eyebrow" style="color:#4488ff">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#fff">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-blue">
+        <p class="sub" style="color:rgba(255,255,255,0.5)">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-blue">Get Free Audit</a><a class="btn btn-outline-white">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="card-label">A2 — Blueprint + Yellow</div>
+    <div class="preview tex-blueprint-bold">
+      <p class="eyebrow" style="color:#F5C518">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#fff">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-yellow">
+        <p class="sub" style="color:rgba(255,255,255,0.5)">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-yellow">Get Free Audit</a><a class="btn btn-outline-white">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="card-label">A3 — Blueprint + Rust</div>
+    <div class="preview tex-blueprint">
+      <p class="eyebrow" style="color:#C45C1A">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#fff">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-rust">
+        <p class="sub" style="color:rgba(255,255,255,0.5)">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-rust">Get Free Audit</a><a class="btn btn-outline-white">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <div class="card-label">B1 — Newsprint + Ink (Current)</div>
+    <div class="preview tex-newsprint">
+      <p class="eyebrow" style="color:#7A7570">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#111110">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-dark">
+        <p class="sub" style="color:#7A7570">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-ink">Get Free Audit</a><a class="btn btn-outline-ink">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="card-label">B2 — Newsprint + Blue</div>
+    <div class="preview tex-worn-white">
+      <p class="eyebrow" style="color:#0047FF">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#111110">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-blue">
+        <p class="sub" style="color:#7A7570">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-blue">Get Free Audit</a><a class="btn btn-outline-ink">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <div class="card-label">B3 — Newsprint + Rust</div>
+    <div class="preview tex-newsprint-dark">
+      <p class="eyebrow" style="color:#C45C1A">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#111110">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-rust">
+        <p class="sub" style="color:#7A7570">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-rust">Get Free Audit</a><a class="btn btn-outline-ink">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="card">
+    <div class="card-label">C1 — Raw Steel + Blue</div>
+    <div class="preview tex-steel">
+      <p class="eyebrow" style="color:#0047FF">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#fff">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-blue">
+        <p class="sub" style="color:rgba(255,255,255,0.4)">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-blue">Get Free Audit</a><a class="btn btn-outline-white">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="card">
+    <div class="card-label">C2 — Raw Steel + Rust</div>
+    <div class="preview tex-steel-rust">
+      <p class="eyebrow" style="color:#C45C1A">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#fff">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-rust">
+        <p class="sub" style="color:rgba(255,255,255,0.4)">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-rust">Get Free Audit</a><a class="btn btn-outline-white">How It Works</a></div>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="card">
+    <div class="card-label">C3 — Concrete + Yellow</div>
+    <div class="preview tex-concrete">
+      <p class="eyebrow" style="color:#F5C518">Roofing · HVAC · Plumbing</p>
+      <h1 style="color:#fff">Stop Losing Jobs To Worse Contractors</h1>
+      <div class="rule-accent-yellow">
+        <p class="sub" style="color:rgba(255,255,255,0.4)">You do better work. They have a better website. We fix that.</p>
+      </div>
+      <div><a class="btn btn-solid-yellow">Get Free Audit</a><a class="btn btn-outline-white">How It Works</a></div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
