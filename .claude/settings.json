@@ -1,0 +1,15 @@
+{
+  "extraKnownMarketplaces": {
+    "anthropic-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills",
+        "path": "skills/frontend-design/.claude-plugin/marketplace.json",
+        "sparsePaths": ["skills/frontend-design"]
+      }
+    }
+  },
+  "enabledPlugins": {
+    "frontend-design@anthropic-skills": true
+  }
+}
