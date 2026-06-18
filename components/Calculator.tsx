@@ -1,15 +1,20 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useTrade } from './TradeContext'
 
 const industryDefaults: Record<string, number> = {
   Roofing: 18000, HVAC: 6000, Solar: 25000, Plumbing: 2000, 'Pressure Washing': 500, Hauling: 400,
 }
 
 export default function Calculator() {
-  const [industry, setIndustry] = useState('Roofing')
+  const { selected } = useTrade()
   const [leads, setLeads] = useState(20)
   const [closeRate, setCloseRate] = useState(20)
-  const [jobValue, setJobValue] = useState(18000)
+  const [jobValue, setJobValue] = useState(industryDefaults[selected.name] ?? 1000)
+
+  useEffect(() => {
+    setJobValue(industryDefaults[selected.name] ?? 1000)
+  }, [selected.name])
 
   const current = Math.round(leads * (closeRate / 100) * jobValue)
   const potential = Math.round(leads * 1.6 * (Math.min(closeRate + 15, 80) / 100) * jobValue)
@@ -19,31 +24,27 @@ export default function Calculator() {
     <section id="pricing" className="border-b-2 border-ink">
       <div className="max-w-7xl mx-auto">
         <div className="px-8 py-12 border-b-2 border-ink">
-          <p className="font-mono text-xs uppercase tracking-widest text-concrete mb-3">Calculator</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-concrete mb-3">Calculator — {selected.name}</p>
           <h2 className="font-condensed text-5xl md:text-6xl text-ink">What&apos;s The Gap Worth?</h2>
         </div>
         <div className="grid md:grid-cols-2">
           <div className="px-8 py-10 border-b-2 md:border-b-0 md:border-r-2 border-ink space-y-8">
-            <div>
-              <label className="font-mono text-xs uppercase tracking-widest text-concrete block mb-3">Trade</label>
-              <select value={industry} onChange={(e) => { setIndustry(e.target.value); setJobValue(industryDefaults[e.target.value] ?? 1000) }}
-                className="w-full bg-paper border-2 border-ink px-4 py-3 font-body text-ink focus:outline-none focus:border-blue">
-                {Object.keys(industryDefaults).map((ind) => <option key={ind}>{ind}</option>)}
-              </select>
-            </div>
             {[
-              { label: 'Monthly Leads', value: leads, set: setLeads, min: 5, max: 200, display: `${leads}` },
-              { label: 'Close Rate', value: closeRate, set: setCloseRate, min: 5, max: 60, display: `${closeRate}%` },
+              { label: 'Monthly Leads', value: leads, set: setLeads, min: 5, max: 200, step: 1, display: `${leads}` },
+              { label: 'Close Rate', value: closeRate, set: setCloseRate, min: 5, max: 60, step: 1, display: `${closeRate}%` },
               { label: 'Avg Job Value', value: jobValue, set: setJobValue, min: 200, max: 50000, step: 100, display: `$${jobValue.toLocaleString()}` },
             ].map(({ label, value, set, min, max, step, display }) => (
               <div key={label}>
                 <label className="font-mono text-xs uppercase tracking-widest text-concrete block mb-3">
                   {label}: <span className="text-blue">{display}</span>
                 </label>
-                <input type="range" min={min} max={max} step={step ?? 1} value={value}
+                <input type="range" min={min} max={max} step={step} value={value}
                   onChange={(e) => set(Number(e.target.value))} className="w-full accent-blue" />
               </div>
             ))}
+            <p className="font-mono text-xs text-concrete uppercase tracking-widest">
+              Job value auto-set for {selected.name}. Adjust as needed.
+            </p>
           </div>
 
           <div className="px-8 py-10 bg-ink flex flex-col justify-center gap-8">
@@ -58,6 +59,7 @@ export default function Calculator() {
             <div className="border-t-2 border-concrete/30 pt-8">
               <p className="font-mono text-xs uppercase tracking-widest text-concrete mb-2">Monthly Uplift</p>
               <p className="font-condensed text-6xl text-blue">+${uplift.toLocaleString()}</p>
+              <p className="font-mono text-xs text-concrete mt-2">${(uplift * 12).toLocaleString()} per year left on the table</p>
             </div>
             <a href="#contact" className="font-mono text-xs uppercase tracking-widest bg-blue text-paper px-6 py-4 text-center hover:bg-paper hover:text-ink transition-colors">
               Get My Free Audit

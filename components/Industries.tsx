@@ -1,3 +1,6 @@
+'use client'
+import { useTrade } from './TradeContext'
+
 const industries = [
   { name: 'Roofing', avg: '$12k – $25k', breakeven: '1 job / year' },
   { name: 'HVAC', avg: '$3k – $12k', breakeven: '2–3 jobs / year' },
@@ -8,6 +11,8 @@ const industries = [
 ]
 
 export default function Industries() {
+  const { selected } = useTrade()
+
   return (
     <section id="industries" className="border-b-2 border-ink">
       <div className="max-w-7xl mx-auto">
@@ -24,13 +29,19 @@ export default function Industries() {
             </tr>
           </thead>
           <tbody>
-            {industries.map((ind, i) => (
-              <tr key={ind.name} className={`${i < industries.length - 1 ? 'border-b border-ink/20' : ''} hover:bg-ink/5 transition-colors`}>
-                <td className="font-condensed text-2xl text-ink px-8 py-5">{ind.name}</td>
-                <td className="font-mono text-sm text-blue px-8 py-5">{ind.avg}</td>
-                <td className="font-mono text-sm text-concrete px-8 py-5">{ind.breakeven}</td>
-              </tr>
-            ))}
+            {industries.map((ind, i) => {
+              const isSelected = ind.name === selected.name
+              return (
+                <tr key={ind.name} className={`${i < industries.length - 1 ? 'border-b border-ink/20' : ''} transition-colors ${isSelected ? 'bg-ink' : 'hover:bg-ink/5'}`}>
+                  <td className={`font-condensed text-2xl px-8 py-5 ${isSelected ? 'text-paper' : 'text-ink'}`}>
+                    {ind.name}
+                    {isSelected && <span className="font-mono text-xs text-blue ml-3 uppercase tracking-widest">← you</span>}
+                  </td>
+                  <td className={`font-mono text-sm px-8 py-5 ${isSelected ? 'text-blue' : 'text-blue'}`}>{ind.avg}</td>
+                  <td className={`font-mono text-sm px-8 py-5 ${isSelected ? 'text-concrete' : 'text-concrete'}`}>{ind.breakeven}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>
