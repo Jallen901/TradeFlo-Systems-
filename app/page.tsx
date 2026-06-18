@@ -1,7 +1,5 @@
-import { TradeProvider } from '@/components/TradeContext'
 import Navbar from '@/components/Navbar'
 import Ticker from '@/components/Ticker'
-import TradeSelector from '@/components/TradeSelector'
 import Hero from '@/components/Hero'
 import Problem from '@/components/Problem'
 import OfferStack from '@/components/OfferStack'
@@ -14,21 +12,18 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <TradeProvider>
-      <main>
-        <Navbar />
-        <Ticker />
-        <TradeSelector />
-        <Hero />
-        <Problem />
-        <OfferStack />
-        <Process />
-        <Industries />
-        <Calculator />
-        <Testimonials />
-        <ContactCTA />
-        <Footer />
-      </main>
-    </TradeProvider>
+    <main>
+      <Navbar />
+      <Ticker />
+      <Hero />
+      <Problem />
+      <OfferStack />
+      <Process />
+      <Industries />
+      <Calculator />
+      <Testimonials />
+      <ContactCTA />
+      <Footer />
+    </main>
   )
 }
