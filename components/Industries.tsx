@@ -2,9 +2,11 @@ const industries = [
   { name: 'Roofing', avg: '$12k – $25k', breakeven: '1 job / year', href: '/roofing' },
   { name: 'HVAC', avg: '$3k – $12k', breakeven: '2–3 jobs / year', href: '/hvac' },
   { name: 'Solar', avg: '$15k – $35k', breakeven: '1 job / year', href: '/solar' },
+  { name: 'Electrical', avg: '$500 – $8k', breakeven: '2–4 jobs / year', href: '/electrical' },
   { name: 'Plumbing', avg: '$500 – $5k', breakeven: '3–5 jobs / year', href: '/plumbing' },
-  { name: 'Pressure Washing', avg: '$250 – $800', breakeven: '8–12 jobs / year', href: '/pressure-washing' },
-  { name: 'Hauling', avg: '$200 – $600', breakeven: '10–15 jobs / year', href: '/hauling' },
+  { name: 'General Contracting', avg: '$10k – $100k', breakeven: '1 job / year', href: '/general-contracting' },
+  { name: 'Landscaping', avg: '$500 – $5k', breakeven: '3–6 jobs / year', href: '/landscaping' },
+  { name: 'Pest Control', avg: '$150 – $600', breakeven: '10–20 jobs / year', href: '/pest-control' },
 ]
 
 export default function Industries() {
