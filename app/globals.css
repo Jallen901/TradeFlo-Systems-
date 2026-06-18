@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #F0EDE8;
+    color: #111110;
+    font-family: var(--font-barlow), sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-barlow-condensed), sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .rule {
+    border-top: 2px solid #111110;
+  }
+  .rule-b {
+    border-bottom: 2px solid #111110;
+  }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  animation: ticker 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
