@@ -118,9 +118,6 @@ export default function Hero() {
               <a href="#contact" className="font-mono text-sm uppercase tracking-widest bg-blue text-paper font-bold px-8 py-4 hover:bg-ink transition-colors">
                 Get Free Audit
               </a>
-              <a href="#process" className="font-mono text-sm uppercase tracking-widest border-2 border-ink text-ink px-8 py-4 hover:bg-ink hover:text-paper transition-colors">
-                How It Works
-              </a>
             </div>
 
             {/* Stat pills */}
