@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#141418"/>
+  <!-- Stripe texture -->
+  <defs>
+    <pattern id="stripe" width="56.57" height="56.57" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="40" height="56.57" fill="none"/>
+      <rect x="40" width="1" height="56.57" fill="rgba(43,94,232,0.08)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#stripe)"/>
+  <!-- Blue accent bar -->
+  <rect x="80" y="80" width="4" height="470" fill="#2B5EE8"/>
+  <!-- Brand name -->
+  <text x="112" y="160" font-family="Arial Black, sans-serif" font-weight="900" font-size="72" fill="#F5F2EC" letter-spacing="4">TradeFlo</text>
+  <text x="112" y="240" font-family="Arial Black, sans-serif" font-weight="900" font-size="72" fill="#2B5EE8" letter-spacing="4">Systems.</text>
+  <!-- Divider -->
+  <rect x="112" y="270" width="80" height="3" fill="#2B5EE8"/>
+  <!-- Headline -->
+  <text x="112" y="340" font-family="Arial, sans-serif" font-size="32" fill="#F5F2EC" opacity="0.9">Stop losing jobs to contractors with worse work.</text>
+  <!-- Subline -->
+  <text x="112" y="390" font-family="Arial, sans-serif" font-size="22" fill="#7A7570">Digital growth systems built for the trades.</text>
+  <!-- Tagline -->
+  <text x="112" y="520" font-family="Arial, sans-serif" font-size="14" fill="#2B5EE8" letter-spacing="3">BUILT FOR HARD WORK. ENGINEERED FOR GROWTH.</text>
+  <!-- URL -->
+  <text x="112" y="560" font-family="Arial, sans-serif" font-size="14" fill="#7A7570" letter-spacing="1">trade-flo-systems.vercel.app</text>
+</svg>

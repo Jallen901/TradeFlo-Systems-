@@ -61,7 +61,7 @@ function ShuffleGrid() {
   }, [])
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 w-full h-full gap-1">
+    <div className="grid grid-cols-4 w-full gap-1" style={{ gridTemplateRows: 'repeat(4, 1fr)', minHeight: '100%' }}>
       {squares}
     </div>
   )
@@ -83,10 +83,10 @@ export default function Hero() {
 
   return (
     <section id="hero" className="border-b-2 border-ink overflow-hidden">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2">
+      <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2">
 
         {/* Left — cream bg, dark text */}
-        <div className="relative px-8 py-20 md:py-36 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink overflow-hidden">
+        <div className="relative px-6 md:px-8 py-14 md:py-36 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink overflow-hidden">
           <div ref={parallaxRef} className="absolute inset-0 texture-stripe-light pointer-events-none" />
           <div ref={headRef} className="relative">
             <p
@@ -96,7 +96,7 @@ export default function Hero() {
               Built For Hard Work. Engineered For Growth.
             </p>
             <h1
-              className="font-condensed text-6xl md:text-7xl lg:text-8xl leading-none text-ink mb-4 transition-all duration-700"
+              className="font-condensed text-5xl md:text-7xl lg:text-8xl leading-none text-ink mb-4 transition-all duration-700"
               style={{ opacity: headInView ? 1 : 0, transform: headInView ? 'none' : 'translateY(24px)', transitionDelay: '100ms' }}
             >
               Stop Losing Jobs To Contractors With Worse Work
@@ -142,8 +142,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right — shuffle photo grid, fills full height */}
-        <div className="bg-ink self-stretch">
+        {/* Right — shuffle photo grid */}
+        <div className="bg-ink self-stretch min-h-[320px] md:min-h-0">
           <ShuffleGrid />
         </div>
 
