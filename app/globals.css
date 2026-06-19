@@ -7,8 +7,8 @@
     box-sizing: border-box;
   }
   body {
-    background-color: #F0EDE8;
-    color: #111110;
+    background-color: #F5F2EC;
+    color: #0D1B2A;
     font-family: var(--font-barlow), sans-serif;
   }
   h1, h2, h3, h4 {
@@ -21,15 +21,33 @@
 
 @layer utilities {
   .rule {
-    border-top: 2px solid #111110;
+    border-top: 2px solid #0D1B2A;
   }
   .rule-b {
-    border-bottom: 2px solid #111110;
+    border-bottom: 2px solid #0D1B2A;
+  }
+  .texture-stripe {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 40px,
+      rgba(201, 168, 76, 0.045) 40px,
+      rgba(201, 168, 76, 0.045) 41px
+    );
+  }
+  .texture-stripe-light {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 40px,
+      rgba(13, 27, 42, 0.025) 40px,
+      rgba(13, 27, 42, 0.025) 41px
+    );
   }
 }
 
 @keyframes ticker {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 .ticker-track {

@@ -13,12 +13,12 @@ export default function Ticker() {
   const doubled = [...items, ...items]
 
   return (
-    <div className="bg-ink text-paper border-b-2 border-ink overflow-hidden py-2.5">
+    <div className="bg-blue text-ink border-b-2 border-ink overflow-hidden py-2.5">
       <div className="ticker-track">
         {doubled.map((item, i) => (
-          <span key={i} className="font-mono text-xs uppercase tracking-widest whitespace-nowrap px-8">
+          <span key={i} className="font-mono text-xs uppercase tracking-widest whitespace-nowrap px-8 font-bold">
             {item}
-            <span className="text-blue mx-6">|</span>
+            <span className="text-ink/40 mx-6">|</span>
           </span>
         ))}
       </div>

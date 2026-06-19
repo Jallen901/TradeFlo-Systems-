@@ -1,20 +1,25 @@
 'use client'
-import { useState, useEffect } from 'react'
-import { useTrade } from './TradeContext'
+import { useState } from 'react'
+import { useInView } from '@/hooks/useInView'
 
-const industryDefaults: Record<string, number> = {
-  Roofing: 18000, HVAC: 6000, Solar: 25000, Plumbing: 2000, 'Pressure Washing': 500, Hauling: 400,
+const trades = ['Roofing', 'HVAC', 'Solar', 'Plumbing', 'Pressure Washing', 'Hauling', 'General Contracting', 'Landscaping']
+const jobDefaults: Record<string, number> = {
+  Roofing: 18000, HVAC: 6000, Solar: 25000, Plumbing: 2000,
+  'Pressure Washing': 500, Hauling: 400, 'General Contracting': 35000, Landscaping: 1200,
 }
 
 export default function Calculator() {
-  const { selected } = useTrade()
+  const [trade, setTrade] = useState('Roofing')
   const [leads, setLeads] = useState(20)
   const [closeRate, setCloseRate] = useState(20)
-  const [jobValue, setJobValue] = useState(industryDefaults[selected.name] ?? 1000)
+  const [jobValue, setJobValue] = useState(18000)
+  const { ref: headerRef, inView: headerInView } = useInView(0.3)
+  const { ref: calcRef, inView: calcInView } = useInView(0.1)
 
-  useEffect(() => {
-    setJobValue(industryDefaults[selected.name] ?? 1000)
-  }, [selected.name])
+  const handleTradeChange = (t: string) => {
+    setTrade(t)
+    setJobValue(jobDefaults[t] ?? 1000)
+  }
 
   const current = Math.round(leads * (closeRate / 100) * jobValue)
   const potential = Math.round(leads * 1.6 * (Math.min(closeRate + 15, 80) / 100) * jobValue)
@@ -23,12 +28,31 @@ export default function Calculator() {
   return (
     <section id="pricing" className="border-b-2 border-ink">
       <div className="max-w-7xl mx-auto">
-        <div className="px-8 py-12 border-b-2 border-ink">
-          <p className="font-mono text-xs uppercase tracking-widest text-concrete mb-3">Calculator — {selected.name}</p>
-          <h2 className="font-condensed text-5xl md:text-6xl text-ink">What&apos;s The Gap Worth?</h2>
+        <div ref={headerRef} className="px-8 py-12 border-b-2 border-ink">
+          <p className="font-mono text-xs uppercase tracking-widest text-blue mb-3 transition-all duration-500"
+            style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateX(-8px)' }}>
+            Revenue Calculator
+          </p>
+          <h2 className="font-condensed text-5xl md:text-6xl text-ink transition-all duration-700"
+            style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateY(20px)', transitionDelay: '100ms' }}>
+            What&apos;s The Gap Worth?
+          </h2>
         </div>
-        <div className="grid md:grid-cols-2">
-          <div className="px-8 py-10 border-b-2 md:border-b-0 md:border-r-2 border-ink space-y-8">
+        <div ref={calcRef} className="grid md:grid-cols-2">
+          <div
+            className="px-8 py-10 border-b-2 md:border-b-0 md:border-r-2 border-ink space-y-8 transition-all duration-700"
+            style={{ opacity: calcInView ? 1 : 0, transform: calcInView ? 'none' : 'translateX(-20px)' }}
+          >
+            <div>
+              <label className="font-mono text-xs uppercase tracking-widest text-concrete block mb-3">Your Trade</label>
+              <select
+                value={trade}
+                onChange={(e) => handleTradeChange(e.target.value)}
+                className="w-full bg-paper border-2 border-ink px-4 py-3 font-body text-ink focus:outline-none focus:border-blue transition-colors"
+              >
+                {trades.map((t) => <option key={t}>{t}</option>)}
+              </select>
+            </div>
             {[
               { label: 'Monthly Leads', value: leads, set: setLeads, min: 5, max: 200, step: 1, display: `${leads}` },
               { label: 'Close Rate', value: closeRate, set: setCloseRate, min: 5, max: 60, step: 1, display: `${closeRate}%` },
@@ -36,32 +60,35 @@ export default function Calculator() {
             ].map(({ label, value, set, min, max, step, display }) => (
               <div key={label}>
                 <label className="font-mono text-xs uppercase tracking-widest text-concrete block mb-3">
-                  {label}: <span className="text-blue">{display}</span>
+                  {label}: <span className="text-blue font-bold">{display}</span>
                 </label>
-                <input type="range" min={min} max={max} step={step} value={value}
-                  onChange={(e) => set(Number(e.target.value))} className="w-full accent-blue" />
+                <input
+                  type="range" min={min} max={max} step={step} value={value}
+                  onChange={(e) => set(Number(e.target.value))}
+                  className="w-full accent-blue"
+                />
               </div>
             ))}
-            <p className="font-mono text-xs text-concrete uppercase tracking-widest">
-              Job value auto-set for {selected.name}. Adjust as needed.
-            </p>
           </div>
 
-          <div className="px-8 py-10 bg-ink flex flex-col justify-center gap-8">
+          <div
+            className="px-8 py-10 bg-ink texture-stripe flex flex-col justify-center gap-8 transition-all duration-700"
+            style={{ opacity: calcInView ? 1 : 0, transform: calcInView ? 'none' : 'translateX(20px)', transitionDelay: '150ms' }}
+          >
             <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-concrete mb-2">Current Revenue</p>
-              <p className="font-condensed text-5xl text-paper">${current.toLocaleString()}<span className="font-mono text-sm text-concrete">/mo</span></p>
+              <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">Current Revenue</p>
+              <p className="font-condensed text-5xl text-paper">${current.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
             </div>
-            <div className="border-t-2 border-concrete/30 pt-8">
-              <p className="font-mono text-xs uppercase tracking-widest text-concrete mb-2">With TradeFlo</p>
-              <p className="font-condensed text-5xl text-blue">${potential.toLocaleString()}<span className="font-mono text-sm text-concrete">/mo</span></p>
+            <div className="border-t-2 border-white/10 pt-8">
+              <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">With TradeFlo</p>
+              <p className="font-condensed text-5xl text-blue">${potential.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
             </div>
-            <div className="border-t-2 border-concrete/30 pt-8">
-              <p className="font-mono text-xs uppercase tracking-widest text-concrete mb-2">Monthly Uplift</p>
-              <p className="font-condensed text-6xl text-blue">+${uplift.toLocaleString()}</p>
-              <p className="font-mono text-xs text-concrete mt-2">${(uplift * 12).toLocaleString()} per year left on the table</p>
+            <div className="border-t-2 border-white/10 pt-8">
+              <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">Monthly Uplift</p>
+              <p className="font-condensed text-6xl text-blue font-bold">+${uplift.toLocaleString()}</p>
+              <p className="font-mono text-xs text-white/40 mt-2">${(uplift * 12).toLocaleString()} per year left on the table</p>
             </div>
-            <a href="#contact" className="font-mono text-xs uppercase tracking-widest bg-blue text-paper px-6 py-4 text-center hover:bg-paper hover:text-ink transition-colors">
+            <a href="#contact" className="font-mono text-xs uppercase tracking-widest font-bold bg-blue text-ink px-6 py-4 text-center hover:bg-paper transition-colors">
               Get My Free Audit
             </a>
           </div>
