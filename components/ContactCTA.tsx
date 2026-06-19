@@ -31,7 +31,7 @@ export default function ContactCTA() {
         {/* Left — info */}
         <div
           ref={leftRef}
-          className="bg-ink texture-stripe px-8 py-16 border-b-2 md:border-b-0 md:border-r-2 border-white/10 flex flex-col justify-center transition-all duration-700"
+          className="bg-ink texture-stripe px-4 md:px-8 py-10 md:py-16 border-b-2 md:border-b-0 md:border-r-2 border-white/10 flex flex-col justify-center transition-all duration-700"
           style={{ opacity: leftInView ? 1 : 0, transform: leftInView ? 'none' : 'translateX(-24px)' }}
         >
           <p className="font-mono text-xs uppercase tracking-widest text-blue mb-4">Free Audit</p>
@@ -47,7 +47,7 @@ export default function ContactCTA() {
         {/* Right — form */}
         <div
           ref={rightRef}
-          className="px-8 py-16 transition-all duration-700"
+          className="px-4 md:px-8 py-10 md:py-16 transition-all duration-700"
           style={{ opacity: rightInView ? 1 : 0, transform: rightInView ? 'none' : 'translateX(24px)', transitionDelay: '150ms' }}
         >
           {status === 'success' ? (

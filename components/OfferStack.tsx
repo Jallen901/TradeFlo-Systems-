@@ -36,7 +36,7 @@ function TierCard({ tier, index }: { tier: typeof tiers[0]; index: number }) {
   return (
     <div
       ref={ref}
-      className={`px-8 py-10 flex flex-col transition-all duration-700 ${tier.highlight ? 'bg-ink' : ''} ${index < tiers.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
+      className={`px-4 md:px-8 py-8 md:py-10 flex flex-col transition-all duration-700 ${tier.highlight ? 'bg-ink' : ''} ${index < tiers.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
       style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(32px)', transitionDelay: `${index * 120}ms` }}
     >
       <p className="font-mono text-xs uppercase tracking-widest text-blue mb-2">{tier.step}</p>
@@ -67,12 +67,12 @@ export default function OfferStack() {
   return (
     <section id="services" className="border-b-2 border-ink">
       <div className="max-w-7xl mx-auto">
-        <div ref={headerRef} className="px-8 py-12 border-b-2 border-ink">
+        <div ref={headerRef} className="px-4 md:px-8 py-8 md:py-12 border-b-2 border-ink">
           <p className="font-mono text-xs uppercase tracking-widest text-blue mb-3 transition-all duration-500"
             style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateX(-8px)' }}>
             Services
           </p>
-          <h2 className="font-condensed text-5xl md:text-6xl text-ink transition-all duration-700"
+          <h2 className="font-condensed text-4xl md:text-5xl lg:text-6xl text-ink transition-all duration-700"
             style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateY(20px)', transitionDelay: '100ms' }}>
             Start Small. Scale Up.
           </h2>
@@ -80,7 +80,7 @@ export default function OfferStack() {
         <div className="grid md:grid-cols-3">
           {tiers.map((tier, i) => <TierCard key={tier.name} tier={tier} index={i} />)}
         </div>
-        <div className="px-8 py-5 border-t-2 border-ink">
+        <div className="px-4 md:px-8 py-4 md:py-5 border-t-2 border-ink">
           <p className="font-mono text-xs uppercase tracking-widest text-concrete">One contractor per trade per market — territory exclusivity included.</p>
         </div>
       </div>

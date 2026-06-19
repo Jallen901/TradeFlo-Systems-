@@ -30,13 +30,13 @@ function TestimonialCard({ t, index }: { t: typeof testimonials[0]; index: numbe
   return (
     <div
       ref={ref}
-      className={`px-8 py-10 flex flex-col transition-all duration-700 ${index < testimonials.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
+      className={`px-4 md:px-8 py-8 md:py-10 flex flex-col transition-all duration-700 ${index < testimonials.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
       style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(28px)', transitionDelay: `${index * 150}ms` }}
     >
-      <div className="font-condensed text-4xl text-blue mb-2">{t.result}</div>
-      <div className="h-px bg-blue/30 mb-6 transition-all duration-700 ease-out" style={{ width: inView ? '60px' : '0px', transitionDelay: `${index * 150 + 300}ms` }} />
-      <p className="font-body text-base text-ink leading-relaxed mb-8 flex-1">&ldquo;{t.quote}&rdquo;</p>
-      <div className="border-t-2 border-ink pt-5">
+      <div className="font-condensed text-3xl md:text-4xl text-blue mb-2">{t.result}</div>
+      <div className="h-px bg-blue/30 mb-5 transition-all duration-700 ease-out" style={{ width: inView ? '60px' : '0px', transitionDelay: `${index * 150 + 300}ms` }} />
+      <p className="font-body text-sm md:text-base text-ink leading-relaxed mb-6 md:mb-8 flex-1">&ldquo;{t.quote}&rdquo;</p>
+      <div className="border-t-2 border-ink pt-4 md:pt-5">
         <p className="font-condensed text-lg text-ink">{t.name}</p>
         <p className="font-mono text-xs text-concrete uppercase tracking-widest mt-1">{t.company} — {t.location}</p>
       </div>
@@ -49,12 +49,12 @@ export default function Testimonials() {
   return (
     <section className="border-b-2 border-ink">
       <div className="max-w-7xl mx-auto">
-        <div ref={headerRef} className="px-8 py-12 border-b-2 border-ink">
+        <div ref={headerRef} className="px-4 md:px-8 py-8 md:py-12 border-b-2 border-ink">
           <p className="font-mono text-xs uppercase tracking-widest text-blue mb-3 transition-all duration-500"
             style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateX(-8px)' }}>
             Results
           </p>
-          <h2 className="font-condensed text-5xl md:text-6xl text-ink transition-all duration-700"
+          <h2 className="font-condensed text-4xl md:text-5xl lg:text-6xl text-ink transition-all duration-700"
             style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateY(20px)', transitionDelay: '100ms' }}>
             The System Works
           </h2>

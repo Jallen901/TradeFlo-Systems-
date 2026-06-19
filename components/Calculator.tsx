@@ -28,19 +28,19 @@ export default function Calculator() {
   return (
     <section id="pricing" className="border-b-2 border-ink">
       <div className="max-w-7xl mx-auto">
-        <div ref={headerRef} className="px-8 py-12 border-b-2 border-ink">
+        <div ref={headerRef} className="px-4 md:px-8 py-8 md:py-12 border-b-2 border-ink">
           <p className="font-mono text-xs uppercase tracking-widest text-blue mb-3 transition-all duration-500"
             style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateX(-8px)' }}>
             Revenue Calculator
           </p>
-          <h2 className="font-condensed text-5xl md:text-6xl text-ink transition-all duration-700"
+          <h2 className="font-condensed text-4xl md:text-5xl lg:text-6xl text-ink transition-all duration-700"
             style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateY(20px)', transitionDelay: '100ms' }}>
             What&apos;s The Gap Worth?
           </h2>
         </div>
         <div ref={calcRef} className="grid md:grid-cols-2">
           <div
-            className="px-8 py-10 border-b-2 md:border-b-0 md:border-r-2 border-ink space-y-8 transition-all duration-700"
+            className="px-4 md:px-8 py-8 md:py-10 border-b-2 md:border-b-0 md:border-r-2 border-ink space-y-6 md:space-y-8 transition-all duration-700"
             style={{ opacity: calcInView ? 1 : 0, transform: calcInView ? 'none' : 'translateX(-20px)' }}
           >
             <div>
@@ -72,20 +72,20 @@ export default function Calculator() {
           </div>
 
           <div
-            className="px-8 py-10 bg-ink texture-stripe flex flex-col justify-center gap-8 transition-all duration-700"
+            className="px-4 md:px-8 py-8 md:py-10 bg-ink texture-stripe flex flex-col justify-center gap-6 md:gap-8 transition-all duration-700"
             style={{ opacity: calcInView ? 1 : 0, transform: calcInView ? 'none' : 'translateX(20px)', transitionDelay: '150ms' }}
           >
             <div>
               <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">Current Revenue</p>
-              <p className="font-condensed text-5xl text-paper">${current.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
+              <p className="font-condensed text-4xl md:text-5xl text-paper">${current.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
             </div>
-            <div className="border-t-2 border-white/10 pt-8">
+            <div className="border-t-2 border-white/10 pt-6 md:pt-8">
               <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">With TradeFlo</p>
-              <p className="font-condensed text-5xl text-blue">${potential.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
+              <p className="font-condensed text-4xl md:text-5xl text-blue">${potential.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
             </div>
-            <div className="border-t-2 border-white/10 pt-8">
+            <div className="border-t-2 border-white/10 pt-6 md:pt-8">
               <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">Monthly Uplift</p>
-              <p className="font-condensed text-6xl text-blue font-bold">+${uplift.toLocaleString()}</p>
+              <p className="font-condensed text-5xl md:text-6xl text-blue font-bold">+${uplift.toLocaleString()}</p>
               <p className="font-mono text-xs text-white/40 mt-2">${(uplift * 12).toLocaleString()} per year left on the table</p>
             </div>
             <a href="#contact" className="font-mono text-xs uppercase tracking-widest font-bold bg-blue text-ink px-6 py-4 text-center hover:bg-paper transition-colors">

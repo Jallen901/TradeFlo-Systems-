@@ -31,10 +31,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#services"
             className="font-mono text-xs uppercase tracking-widest bg-blue text-ink font-bold px-4 py-2 hover:bg-paper transition-colors"
           >
-            Get Free Audit
+            See Pricing
           </a>
         </nav>
 
@@ -64,11 +64,11 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#services"
             onClick={() => setOpen(false)}
             className="block font-mono text-xs uppercase tracking-widest px-6 py-4 bg-blue text-ink font-bold hover:bg-paper text-center"
           >
-            Get Free Audit
+            See Pricing
           </a>
         </nav>
       )}

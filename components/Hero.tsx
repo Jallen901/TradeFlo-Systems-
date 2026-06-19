@@ -61,7 +61,7 @@ function ShuffleGrid() {
   }, [])
 
   return (
-    <div className="grid grid-cols-4 w-full gap-1" style={{ gridTemplateRows: 'repeat(4, 1fr)', minHeight: '100%' }}>
+    <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-1" style={{ gridTemplateRows: 'repeat(4, 1fr)', minHeight: '100%' }}>
       {squares}
     </div>
   )
@@ -96,7 +96,7 @@ export default function Hero() {
               Built For Hard Work. Engineered For Growth.
             </p>
             <h1
-              className="font-condensed text-5xl md:text-7xl lg:text-8xl leading-none text-ink mb-4 transition-all duration-700"
+              className="font-condensed text-4xl md:text-7xl lg:text-8xl leading-none text-ink mb-4 transition-all duration-700"
               style={{ opacity: headInView ? 1 : 0, transform: headInView ? 'none' : 'translateY(24px)', transitionDelay: '100ms' }}
             >
               More Calls. More Jobs. Less Chasing.
@@ -106,7 +106,7 @@ export default function Hero() {
               style={{ width: headInView ? '80px' : '0px', transitionDelay: '400ms' }}
             />
             <p
-              className="font-body text-lg text-concrete mb-10 max-w-sm transition-all duration-700"
+              className="font-body text-base md:text-lg text-concrete mb-8 md:mb-10 max-w-sm transition-all duration-700"
               style={{ opacity: headInView ? 1 : 0, transform: headInView ? 'none' : 'translateY(16px)', transitionDelay: '200ms' }}
             >
               TradeFlo builds the websites, automations, and lead systems that put your trade back in front of every customer searching for it.
@@ -122,17 +122,18 @@ export default function Hero() {
 
             {/* Stat pills */}
             <div
-              className="grid grid-cols-3 gap-3 mt-10 transition-all duration-700"
+              className="grid grid-cols-3 gap-3 mt-8 md:mt-10 transition-all duration-700"
               style={{ opacity: headInView ? 1 : 0, transform: headInView ? 'none' : 'translateY(16px)', transitionDelay: '450ms' }}
             >
               {[
-                { n: '43%', label: 'Calls go unanswered' },
-                { n: '78%', label: 'Hire first responder' },
-                { n: '<60s', label: 'Our text-back speed' },
+                { n: '43%', label: 'Calls go unanswered', sub: 'Industry avg' },
+                { n: '78%', label: 'Hire first responder', sub: 'Of homeowners' },
+                { n: '<60s', label: 'Text-back speed', sub: 'TradeFlo avg' },
               ].map((s) => (
                 <div key={s.n} className="border-t-2 border-ink pt-3">
-                  <div className="font-condensed text-2xl text-blue leading-none">{s.n}</div>
-                  <div className="font-mono text-[10px] text-concrete uppercase tracking-wide mt-0.5 leading-tight">{s.label}</div>
+                  <div className="font-condensed text-xl md:text-2xl text-blue leading-none">{s.n}</div>
+                  <div className="font-mono text-[10px] text-concrete uppercase tracking-wide mt-1 leading-tight">{s.label}</div>
+                  <div className="font-mono text-[9px] text-concrete/50 uppercase tracking-wide mt-0.5 leading-tight">{s.sub}</div>
                 </div>
               ))}
             </div>
@@ -140,7 +141,7 @@ export default function Hero() {
         </div>
 
         {/* Right — shuffle photo grid */}
-        <div className="bg-ink self-stretch min-h-[320px] md:min-h-0">
+        <div className="bg-ink self-stretch min-h-[280px] md:min-h-0">
           <ShuffleGrid />
         </div>
 
