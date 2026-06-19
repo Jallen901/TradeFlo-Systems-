@@ -39,15 +39,9 @@ export default function ContactCTA() {
             Find Out Where Your Leads Are Falling Off
           </h2>
           <div className="h-px bg-blue mb-6 transition-all duration-700" style={{ width: leftInView ? '60px' : '0px', transitionDelay: '400ms' }} />
-          <p className="font-body text-base text-white/60 mb-8 max-w-sm">
-            We analyze your site, Google profile, reviews, and top competitors — then send you a plain-English breakdown. Free. 24 hours. No sales call.
+          <p className="font-body text-base text-white/60 max-w-sm">
+            Free. 24 hours. No sales call. Just a plain-English breakdown of what's costing you jobs.
           </p>
-          <div className="space-y-2 font-mono text-xs uppercase tracking-widest text-white/40">
-            <p>— Website + speed audit</p>
-            <p>— Google Business analysis</p>
-            <p>— Competitor comparison</p>
-            <p>— Revenue opportunity estimate</p>
-          </div>
         </div>
 
         {/* Right — form */}

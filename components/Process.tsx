@@ -3,9 +3,8 @@ import { useInView } from '@/hooks/useInView'
 
 const steps = [
   { num: '01', title: 'Free Audit', body: 'We analyze your site, Google profile, reviews, and competitors. Delivered in 24 hours. No charge.' },
-  { num: '02', title: 'See The Gap', body: "Plain-English breakdown of where leads fall off and what it's costing you. Loom video or PDF." },
-  { num: '03', title: 'We Build It', body: 'Website, CRM, automations, SEO. You stay on the job — we handle the tech.' },
-  { num: '04', title: 'You Get Jobs', body: 'Calls in. Texts out. Reviews stack. One extra job usually pays for the full year.' },
+  { num: '02', title: 'See The Gap', body: "Plain-English breakdown of exactly where you're losing jobs and what it's costing you monthly." },
+  { num: '03', title: 'We Build. You Work.', body: 'Website, SEO, automations — all handled. You stay on the tools. One extra job usually covers the full year.' },
 ]
 
 function StepCard({ num, title, body, index }: { num: string; title: string; body: string; index: number }) {
@@ -36,10 +35,10 @@ export default function Process() {
           </p>
           <h2 className="font-condensed text-5xl md:text-6xl text-ink transition-all duration-700"
             style={{ opacity: headerInView ? 1 : 0, transform: headerInView ? 'none' : 'translateY(20px)', transitionDelay: '100ms' }}>
-            Four Steps. No Fluff.
+            Three Steps. No Fluff.
           </h2>
         </div>
-        <div className="grid md:grid-cols-4">
+        <div className="grid md:grid-cols-3">
           {steps.map((s, i) => <StepCard key={s.num} {...s} index={i} />)}
         </div>
       </div>
