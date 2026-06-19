@@ -5,7 +5,7 @@ const tiers = [
   {
     step: 'Step 1',
     name: 'Website Build',
-    price: '$1,500 – $5,000',
+    price: '$800 – $4,000',
     cadence: 'One-Time',
     features: ['A site that converts visitors to calls', 'Trade-specific copy + local SEO', 'Quote form + call tracking built in'],
     cta: 'Start With A Website',
