@@ -61,7 +61,7 @@ function ShuffleGrid() {
   }, [])
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+    <div className="grid grid-cols-4 grid-rows-4 w-full h-full gap-1">
       {squares}
     </div>
   )
@@ -143,7 +143,7 @@ export default function Hero() {
         </div>
 
         {/* Right — shuffle photo grid, fills full height */}
-        <div className="bg-ink flex flex-col">
+        <div className="bg-ink self-stretch">
           <ShuffleGrid />
         </div>
 
