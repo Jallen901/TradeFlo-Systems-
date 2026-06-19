@@ -15,8 +15,8 @@ export default function Home() {
       <main id="main-content">
         <Ticker />
         <Hero />
-        <OfferStack />
         <Process />
+        <OfferStack />
         <Calculator />
         <Testimonials />
         <ContactCTA />
