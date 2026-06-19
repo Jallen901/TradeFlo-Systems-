@@ -51,7 +51,7 @@
   100% { transform: translateX(-50%); }
 }
 .ticker-track {
-  animation: ticker 30s linear infinite;
+  animation: ticker 60s linear infinite;
   display: flex;
   width: max-content;
 }
