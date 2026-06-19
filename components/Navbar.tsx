@@ -16,7 +16,7 @@ export default function Navbar() {
     <header className="bg-ink border-b-2 border-ink sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="/" className="font-condensed text-2xl font-extrabold tracking-widest text-paper uppercase">
-          TradeFlo<span className="text-blue">.</span>
+          TradeFlo<span className="text-blue"> Systems</span><span className="text-blue">.</span>
         </a>
 
         {/* Desktop nav */}

@@ -12,11 +12,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-8 py-12">
         <div className="grid md:grid-cols-3 gap-10 border-b border-white/10 pb-10 mb-10">
           <div>
-            <p className="font-condensed text-3xl font-extrabold tracking-widest mb-2">
-              TradeFlo<span className="text-blue">.</span>
+            <p className="font-condensed text-3xl font-extrabold tracking-widest mb-1">
+              TradeFlo<span className="text-steel"> Systems</span><span className="text-blue">.</span>
             </p>
-            <p className="font-mono text-xs uppercase tracking-widest text-white/40">
-              Turn Clicks Into Calls.<br />Turn Calls Into Jobs.
+            <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-1">
+              Built for hard work. Engineered for growth.
             </p>
           </div>
           <div>
@@ -31,8 +31,8 @@ export default function Footer() {
           </div>
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">Contact</p>
-            <a href="mailto:hello@tradeflosystems.com" className="font-mono text-xs text-paper/70 hover:text-blue transition-colors">
-              hello@tradeflosystems.com
+            <a href="mailto:hello@tradeflowsystems.com" className="font-mono text-xs text-paper/70 hover:text-blue transition-colors">
+              hello@tradeflowsystems.com
             </a>
           </div>
         </div>

@@ -8,7 +8,7 @@
   }
   body {
     background-color: #F5F2EC;
-    color: #0D1B2A;
+    color: #141418;
     font-family: var(--font-barlow), sans-serif;
   }
   h1, h2, h3, h4 {
@@ -31,8 +31,8 @@
       -45deg,
       transparent 0,
       transparent 40px,
-      rgba(201, 168, 76, 0.045) 40px,
-      rgba(201, 168, 76, 0.045) 41px
+      rgba(43,94,232,0.04) 40px,
+      rgba(43,94,232,0.04) 41px
     );
   }
   .texture-stripe-light {
@@ -40,8 +40,8 @@
       -45deg,
       transparent 0,
       transparent 40px,
-      rgba(13, 27, 42, 0.025) 40px,
-      rgba(13, 27, 42, 0.025) 41px
+      rgba(20,20,24,0.025) 40px,
+      rgba(20,20,24,0.025) 41px
     );
   }
 }

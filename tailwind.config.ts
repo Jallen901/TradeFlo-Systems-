@@ -10,9 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         paper: '#F5F2EC',
-        ink: '#0D1B2A',
-        blue: '#C9A84C',
+        ink: '#141418',
+        blue: '#2B5EE8',
         concrete: '#7A7570',
+        steel: '#8896A5',
       },
       keyframes: {
         sweepRight: {
