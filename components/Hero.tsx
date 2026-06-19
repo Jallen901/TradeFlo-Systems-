@@ -109,7 +109,7 @@ export default function Hero() {
               className="font-body text-lg text-concrete mb-10 max-w-sm transition-all duration-700"
               style={{ opacity: headInView ? 1 : 0, transform: headInView ? 'none' : 'translateY(16px)', transitionDelay: '200ms' }}
             >
-              You do better work. They have a better website. We fix that.
+              TradeFlo builds the websites, automations, and lead systems that put your trade back in front of every customer searching for it.
             </p>
             <div
               className="flex flex-wrap gap-4 transition-all duration-700"
