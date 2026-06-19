@@ -4,7 +4,7 @@ import { useInView } from '@/hooks/useInView'
 const steps = [
   { num: '01', title: 'Free Audit', body: 'We analyze your site, Google profile, reviews, and competitors. Delivered in 24 hours. No charge.' },
   { num: '02', title: 'See The Gap', body: "Plain-English breakdown of exactly where you're losing jobs and what it's costing you monthly." },
-  { num: '03', title: 'We Build. You Work.', body: 'Website, SEO, automations all handled. You stay booked and busy. One extra job usually covers our full year service.' },
+  { num: '03', title: 'We Build. You Work.', body: 'AI receptionist, website, SEO, automations, missed call text back and more — all handled. You stay booked and busy. One extra job usually covers our full year service.' },
 ]
 
 function StepCard({ num, title, body, index }: { num: string; title: string; body: string; index: number }) {
