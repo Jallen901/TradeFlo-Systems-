@@ -4,10 +4,24 @@ import { useEffect, useRef, useState } from 'react'
 import { useInView } from '@/hooks/useInView'
 
 // Local trade photos
-const squareData = Array.from({ length: 32 }, (_, i) => ({
-  id: i + 1,
-  src: `/images/hero/trade_photo_${String(i + 1).padStart(2, '0')}.png`,
-}))
+const squareData = [
+  ...Array.from({ length: 32 }, (_, i) => ({
+    id: i + 1,
+    src: `/images/hero/trade_photo_${String(i + 1).padStart(2, '0')}.png`,
+  })),
+  { id: 33, src: '/images/hero/01_carpenter.png' },
+  { id: 34, src: '/images/hero/02_tools.png' },
+  { id: 35, src: '/images/hero/03_electrician.png' },
+  { id: 36, src: '/images/hero/04_roofer.png' },
+  { id: 37, src: '/images/hero/05_welder.png' },
+  { id: 38, src: '/images/hero/06_tradeflow_logo.png' },
+  { id: 39, src: '/images/hero/07_hvac_technician.png' },
+  { id: 40, src: '/images/hero/08_plumber.png' },
+  { id: 41, src: '/images/hero/09_painter.png' },
+  { id: 42, src: '/images/hero/10_construction_sunset.png' },
+  { id: 43, src: '/images/hero/11_job_overview_dashboard.png' },
+  { id: 44, src: '/images/hero/12_woodworker.png' },
+]
 
 const shuffle = (arr: typeof squareData) => {
   const a = [...arr]
