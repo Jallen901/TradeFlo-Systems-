@@ -33,9 +33,9 @@ const shuffle = (arr: typeof squareData) => {
 }
 
 const generateSquares = () =>
-  shuffle(squareData).slice(0, 16).map((sq) => (
+  shuffle(squareData).slice(0, 16).map((sq, i) => (
     <motion.div
-      key={sq.id}
+      key={i}
       layout
       transition={{ duration: 1.5, type: 'spring' }}
       className="w-full h-full overflow-hidden"
