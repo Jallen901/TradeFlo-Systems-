@@ -19,13 +19,14 @@ const shuffle = (arr: typeof squareData) => {
 }
 
 const generateSquares = () =>
-  shuffle(squareData).map((sq) => (
+  shuffle(squareData).slice(0, 16).map((sq) => (
     <motion.div
       key={sq.id}
       layout
       transition={{ duration: 1.5, type: 'spring' }}
       className="w-full h-full overflow-hidden"
       style={{
+        backgroundColor: '#F5F2EC',
         backgroundImage: `url(${sq.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -47,7 +48,7 @@ function ShuffleGrid() {
   }, [])
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-1" style={{ gridTemplateRows: 'repeat(4, 1fr)', minHeight: '100%' }}>
+    <div className="grid grid-cols-2 md:grid-cols-4 w-full flex-1 gap-1" style={{ gridTemplateRows: 'repeat(4, minmax(80px, 1fr))' }}>
       {squares}
     </div>
   )
@@ -127,7 +128,7 @@ export default function Hero() {
         </div>
 
         {/* Right — shuffle photo grid */}
-        <div className="bg-ink self-stretch min-h-[280px] md:min-h-0">
+        <div className="bg-paper self-stretch min-h-[320px] md:min-h-[600px] flex flex-col">
           <ShuffleGrid />
         </div>
 
