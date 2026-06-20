@@ -21,7 +21,7 @@ const barlow = Barlow({
 })
 
 export const metadata: Metadata = {
-  title: 'TradeFlo Systems — Turn Clicks Into Calls. Turn Calls Into Jobs.',
+  title: 'TradeFlo Systems',
   description: 'Digital growth systems for blue-collar trade businesses. Roofing, HVAC, plumbing, solar, pressure washing, hauling. Get your free audit today.',
   keywords: ['trade business marketing', 'roofing website', 'HVAC digital marketing', 'contractor leads', 'blue collar growth', 'trade contractor website'],
   authors: [{ name: 'TradeFlo Systems' }],
