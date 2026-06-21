@@ -100,7 +100,7 @@ export default function Hero() {
               className="font-condensed text-4xl md:text-7xl lg:text-8xl leading-none text-ink mb-4 transition-all duration-700"
               style={{ opacity: headInView ? 1 : 0, transform: headInView ? 'none' : 'translateY(24px)', transitionDelay: '100ms' }}
             >
-              More Calls. More Jobs. Less Chasing.
+              You Do The Work. We Get The Calls.
             </h1>
             <div
               className="mb-6 h-0.5 bg-blue origin-left transition-all duration-700 ease-out"
