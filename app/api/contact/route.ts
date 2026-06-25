@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 
   await transporter.sendMail({
     from: `"TradeFlo Systems" <${process.env.SMTP_USER}>`,
-    to: 'hello@tradeflosystems.com',
+    to: 'leads@tradeflosystems.com',
     subject: `New Audit Request — ${businessType} — ${name}`,
     text: `
 New audit request from TradeFlo Systems website.

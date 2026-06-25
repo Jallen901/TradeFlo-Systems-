@@ -30,8 +30,8 @@ export default function Footer() {
           </div>
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-4">Contact</p>
-            <a href="mailto:hello@tradeflosystems.com" className="font-mono text-xs text-paper/70 hover:text-blue transition-colors">
-              hello@tradeflosystems.com
+            <a href="mailto:leads@tradeflosystems.com" className="font-mono text-xs text-paper/70 hover:text-blue transition-colors">
+              leads@tradeflosystems.com
             </a>
           </div>
         </div>
