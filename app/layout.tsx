@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   description: 'Digital growth systems for blue-collar trade businesses. Roofing, HVAC, plumbing, solar, pressure washing, hauling. Get your free audit today.',
   keywords: ['trade business marketing', 'roofing website', 'HVAC digital marketing', 'contractor leads', 'blue collar growth', 'trade contractor website'],
   authors: [{ name: 'TradeFlo Systems' }],
-  metadataBase: new URL('https://trade-flo-systems.vercel.app'),
+  metadataBase: new URL('https://tradeflosystems.com'),
   openGraph: {
     type: 'website',
-    url: 'https://trade-flo-systems.vercel.app',
+    url: 'https://tradeflosystems.com',
     title: 'TradeFlo Systems — Built For Hard Work. Engineered For Growth.',
     description: 'Stop losing jobs to contractors with worse work. We build digital growth systems for trade businesses that get you more calls, more jobs, more revenue.',
     siteName: 'TradeFlo Systems',
