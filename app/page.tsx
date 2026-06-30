@@ -4,7 +4,6 @@ import Hero from '@/components/Hero'
 import OfferStack from '@/components/OfferStack'
 import Process from '@/components/Process'
 import Calculator from '@/components/Calculator'
-import Testimonials from '@/components/Testimonials'
 import ContactCTA from '@/components/ContactCTA'
 import Footer from '@/components/Footer'
 
@@ -18,7 +17,6 @@ export default function Home() {
         <Process />
         <OfferStack />
         <Calculator />
-        <Testimonials />
         <ContactCTA />
       </main>
       <Footer />

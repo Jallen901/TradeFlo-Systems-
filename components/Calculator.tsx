@@ -22,7 +22,7 @@ export default function Calculator() {
   }
 
   const current = Math.round(leads * (closeRate / 100) * jobValue)
-  const potential = Math.round(leads * 1.6 * (Math.min(closeRate + 15, 80) / 100) * jobValue)
+  const potential = Math.round(leads * 1.3 * (Math.min(closeRate + 8, 60) / 100) * jobValue)
   const uplift = potential - current
 
   return (

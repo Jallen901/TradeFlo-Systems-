@@ -39,9 +39,12 @@ export default function Footer() {
           <p className="font-mono text-xs text-white/30 uppercase tracking-widest">
             &copy; {new Date().getFullYear()} TradeFlo Systems. All rights reserved.
           </p>
-          <p className="font-mono text-xs text-blue uppercase tracking-widest font-bold">
-            Built for the trades.
-          </p>
+          <div className="flex items-center gap-6">
+            <a href="/privacy" className="font-mono text-xs text-white/30 uppercase tracking-widest hover:text-blue transition-colors">Privacy Policy</a>
+            <p className="font-mono text-xs text-blue uppercase tracking-widest font-bold">
+              Built for the trades.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
