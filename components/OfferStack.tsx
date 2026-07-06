@@ -13,7 +13,7 @@ const tiers = [
       'Quote form + call tracking built in',
       'Mobile-first design — built for how your customers browse',
       'Google Business Profile setup + optimization',
-      'Launched in less than a week — guaranteed',
+      'Website launched in less than a week GUARANTEED',
     ],
     cta: 'Start With A Website',
     highlight: false,
