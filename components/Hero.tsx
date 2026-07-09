@@ -87,7 +87,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2">
 
         {/* Left — cream bg, dark text */}
-        <div className="relative px-6 md:px-8 py-14 md:py-36 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink overflow-hidden">
+        <div className="relative px-5 md:px-8 py-10 md:py-36 flex flex-col justify-center border-b-2 md:border-b-0 md:border-r-2 border-ink overflow-hidden">
           <div ref={parallaxRef} className="absolute inset-0 texture-stripe-light pointer-events-none" />
           <div ref={headRef} className="relative">
             <p
@@ -97,7 +97,7 @@ export default function Hero() {
               Built For Hard Work. Engineered For Growth.
             </p>
             <h1
-              className="font-condensed text-4xl md:text-7xl lg:text-8xl leading-none text-ink mb-4 transition-all duration-700"
+              className="font-condensed text-5xl md:text-7xl lg:text-8xl leading-none text-ink mb-4 transition-all duration-700"
               style={{ opacity: headInView ? 1 : 0, transform: headInView ? 'none' : 'translateY(24px)', transitionDelay: '100ms' }}
             >
               You Do The Work. We Get The Calls.
