@@ -5,17 +5,32 @@
 @layer base {
   * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     background-color: #F5F2EC;
     color: #141418;
     font-family: var(--font-barlow), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-barlow-condensed), sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.02em;
+  }
+  input[type='range'] {
+    height: 6px;
+    border-radius: 0;
+  }
+  select {
+    -webkit-appearance: none;
+    appearance: none;
   }
 }
 

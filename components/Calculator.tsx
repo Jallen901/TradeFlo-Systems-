@@ -40,7 +40,7 @@ export default function Calculator() {
         </div>
         <div ref={calcRef} className="grid md:grid-cols-2">
           <div
-            className="px-4 md:px-8 py-8 md:py-10 border-b-2 md:border-b-0 md:border-r-2 border-ink space-y-6 md:space-y-8 transition-all duration-700"
+            className="px-5 md:px-8 py-7 md:py-10 border-b-2 md:border-b-0 md:border-r-2 border-ink space-y-5 md:space-y-8 order-2 md:order-1 transition-all duration-700"
             style={{ opacity: calcInView ? 1 : 0, transform: calcInView ? 'none' : 'translateX(-20px)' }}
           >
             <div>
@@ -72,18 +72,18 @@ export default function Calculator() {
           </div>
 
           <div
-            className="px-4 md:px-8 py-8 md:py-10 bg-ink texture-stripe flex flex-col justify-center gap-6 md:gap-8 transition-all duration-700"
+            className="px-5 md:px-8 py-7 md:py-10 bg-ink texture-stripe flex flex-col justify-center gap-5 md:gap-8 order-1 md:order-2 transition-all duration-700"
             style={{ opacity: calcInView ? 1 : 0, transform: calcInView ? 'none' : 'translateX(20px)', transitionDelay: '150ms' }}
           >
             <div>
               <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">Current Revenue</p>
               <p className="font-condensed text-4xl md:text-5xl text-paper">${current.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
             </div>
-            <div className="border-t-2 border-white/10 pt-6 md:pt-8">
+            <div className="border-t border-white/10 pt-4 md:pt-8">
               <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">With TradeFlo</p>
               <p className="font-condensed text-4xl md:text-5xl text-blue">${potential.toLocaleString()}<span className="font-mono text-sm text-white/40">/mo</span></p>
             </div>
-            <div className="border-t-2 border-white/10 pt-6 md:pt-8">
+            <div className="border-t border-white/10 pt-4 md:pt-8">
               <p className="font-mono text-xs uppercase tracking-widest text-white/40 mb-2">Monthly Uplift</p>
               <p className="font-condensed text-5xl md:text-6xl text-blue font-bold">+${uplift.toLocaleString()}</p>
               <p className="font-mono text-xs text-white/40 mt-2">${(uplift * 12).toLocaleString()} per year left on the table</p>

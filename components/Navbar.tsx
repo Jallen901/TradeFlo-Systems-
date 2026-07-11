@@ -68,7 +68,7 @@ export default function Navbar() {
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block font-mono text-xs uppercase tracking-widest px-6 py-4 border-b border-white/10 text-paper/70 hover:text-blue"
+              className="block font-mono text-xs uppercase tracking-widest px-6 py-5 border-b border-white/10 text-paper/70 hover:text-blue active:text-blue"
             >
               {l.label}
             </a>
@@ -76,7 +76,7 @@ export default function Navbar() {
           <a
             href="#services"
             onClick={() => setOpen(false)}
-            className="block font-mono text-xs uppercase tracking-widest px-6 py-4 bg-blue text-ink font-bold hover:bg-paper text-center"
+            className="block font-mono text-xs uppercase tracking-widest px-6 py-5 bg-blue text-ink font-bold hover:bg-paper text-center"
           >
             See Pricing
           </a>

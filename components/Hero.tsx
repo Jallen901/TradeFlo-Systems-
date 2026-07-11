@@ -62,7 +62,7 @@ function ShuffleGrid() {
   }, [])
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 w-full flex-1 gap-1" style={{ gridTemplateRows: 'repeat(4, minmax(80px, 1fr))' }}>
+    <div className="grid grid-cols-2 md:grid-cols-4 w-full flex-1 gap-0.5" style={{ gridTemplateRows: 'repeat(4, minmax(65px, 1fr))' }}>
       {squares}
     </div>
   )
@@ -142,7 +142,7 @@ export default function Hero() {
         </div>
 
         {/* Right — shuffle photo grid */}
-        <div className="bg-paper self-stretch min-h-[320px] md:min-h-[600px] flex flex-col">
+        <div className="bg-paper self-stretch min-h-[260px] md:min-h-[600px] flex flex-col">
           <ShuffleGrid />
         </div>
 

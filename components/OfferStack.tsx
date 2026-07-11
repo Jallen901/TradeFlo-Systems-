@@ -57,7 +57,7 @@ function TierCard({ tier, index }: { tier: typeof tiers[0]; index: number }) {
   return (
     <div
       ref={ref}
-      className={`px-4 md:px-8 py-8 md:py-10 flex flex-col transition-all duration-700 ${tier.highlight ? 'bg-ink' : ''} ${index < tiers.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
+      className={`px-5 md:px-8 py-8 md:py-10 flex flex-col transition-all duration-700 ${tier.highlight ? 'bg-ink' : ''} ${index < tiers.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
       style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(32px)', transitionDelay: `${index * 120}ms` }}
     >
       <p className="font-mono text-xs uppercase tracking-widest text-blue mb-2">{tier.step}</p>
@@ -75,7 +75,7 @@ function TierCard({ tier, index }: { tier: typeof tiers[0]; index: number }) {
       </ul>
       <a
         href="#contact"
-        className={`font-mono text-xs uppercase tracking-widest px-6 py-3 text-center transition-colors font-bold ${tier.highlight ? 'bg-blue text-ink hover:bg-paper' : 'bg-ink text-paper hover:bg-blue hover:text-ink'}`}
+        className={`font-mono text-xs uppercase tracking-widest px-6 py-4 text-center transition-colors font-bold ${tier.highlight ? 'bg-blue text-ink hover:bg-paper' : 'bg-ink text-paper hover:bg-blue hover:text-ink'}`}
       >
         {tier.cta}
       </a>

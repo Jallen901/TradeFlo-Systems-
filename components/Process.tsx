@@ -12,7 +12,7 @@ function StepCard({ num, title, body, index }: { num: string; title: string; bod
   return (
     <div
       ref={ref}
-      className={`px-4 md:px-8 py-8 md:py-10 transition-all duration-700 ${index < steps.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
+      className={`px-5 md:px-8 py-7 md:py-10 transition-all duration-700 ${index < steps.length - 1 ? 'border-b-2 md:border-b-0 md:border-r-2' : ''} border-ink`}
       style={{ opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(28px)', transitionDelay: `${index * 120}ms` }}
     >
       <div className="font-condensed text-5xl md:text-6xl text-ink/10 [-webkit-text-stroke:2px_#C9A84C] mb-4 leading-none select-none">{num}</div>
