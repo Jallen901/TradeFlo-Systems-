@@ -18,10 +18,10 @@ export default function ContactCTA() {
     <section id="contact" className="border-b-2 border-ink">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2">
 
-        {/* Left — info */}
+        {/* Left — info (order-2 on mobile so form shows first) */}
         <div
           ref={leftRef}
-          className="bg-ink texture-stripe px-4 md:px-8 py-8 md:py-12 border-b-2 md:border-b-0 md:border-r-2 border-white/10 flex flex-col justify-start transition-all duration-700"
+          className="bg-ink texture-stripe px-4 md:px-8 py-8 md:py-12 border-t-2 md:border-t-0 md:border-r-2 border-white/10 flex flex-col justify-start order-2 md:order-1 transition-all duration-700"
           style={{ opacity: leftInView ? 1 : 0, transform: leftInView ? 'none' : 'translateX(-24px)' }}
         >
           <p className="font-mono text-xs uppercase tracking-widest text-blue mb-4">Free Audit</p>
@@ -42,10 +42,10 @@ export default function ContactCTA() {
           </ul>
         </div>
 
-        {/* Right — GHL form */}
+        {/* Right — GHL form (order-1 on mobile so it shows first) */}
         <div
           ref={rightRef}
-          className="px-4 md:px-8 py-8 md:py-12 transition-all duration-700"
+          className="px-4 md:px-8 py-8 md:py-12 order-1 md:order-2 transition-all duration-700"
           style={{ opacity: rightInView ? 1 : 0, transform: rightInView ? 'none' : 'translateX(24px)', transitionDelay: '150ms' }}
         >
           <iframe
